@@ -12,7 +12,7 @@ Outside of my professional work, I'm a homelabbing enthusiast. I enjoy experimen
 
 ### Finbot — Financial Data & AI Engineering
 
-A collection of services exploring event-driven data pipelines, cloud infrastructure, LLM-based information extraction, and evaluation using public financial disclosures.
+A collection of interconnected services for discovering financial disclosures, extracting structured earnings data with LLMs, and evaluating extraction quality. Built to explore event-driven architectures, cloud infrastructure, AI engineering, and rigorous model evaluation.
 
 **[Finbot Filings — SEC Filing Discovery & Ingestion](https://github.com/ilancooke/finbot-filings)**
 
@@ -20,13 +20,19 @@ An AWS-based document ingestion service that monitors SEC filings using earnings
 
 *Technologies: Python, AWS ECS/Fargate, S3, DynamoDB, SNS, CloudWatch, Docker, CDK*
 
-**[Finbot Earnings — LLM Earnings Extraction & Evaluation](https://github.com/ilancooke/finbot-earnings)**
+**[Finbot Earnings — LLM Earnings Extraction](https://github.com/ilancooke/finbot-earnings)**
 
-An LLM-powered processing pipeline that transforms financial filings into structured earnings data. Combines multi-document extraction using Amazon Bedrock with evidence validation, event versioning, and recoverable processing. Includes an evaluation framework for testing extraction quality, validation outcomes, cost, and latency against synthetic and reviewed filing datasets.
+An LLM-powered processing pipeline that transforms financial filings into structured earnings data. Processes multi-document filings using Amazon Bedrock, validates extracted values against source evidence, and maintains versioned earnings events with recoverable processing and publication. Designed as an event-driven consumer of Finbot Filings.
 
-*Technologies: Python, Amazon Bedrock, LLM evaluation, structured outputs, AWS Lambda, SQS, DynamoDB*
+*Technologies: Python, Amazon Bedrock, structured outputs, AWS Lambda, SQS, DynamoDB, SNS*
 
 *In development — AWS processing infrastructure implemented and tested offline.*
+
+**[Finbot Filing Evals — LLM Evaluation & Benchmarking](https://github.com/ilancooke/finbot-filing-evals)**
+
+A human-in-the-loop evaluation framework for benchmarking LLM extraction of financial metrics from SEC filings. Includes a Streamlit annotation interface for building source-grounded datasets, a reproducible evaluation pipeline, and experiment reporting to compare models and prompts across extraction accuracy, token usage, latency, and cost. Supports multiple LLM providers and includes a human-reviewed dataset of 50 filings for EPS extraction evaluation.
+
+*Technologies: Python, Streamlit, OpenAI API, Anthropic API, Amazon Bedrock, LLM evaluation, data annotation, experiment tracking*
 
 ### [Resume Modifier — LLM-Powered Resume Generation & Evaluation](https://github.com/ilancooke/resume_modifier)
 
@@ -43,7 +49,7 @@ A self-hosted web dashboard integrating weather data, security cameras, whole-ho
 ## Technical Focus
 
 - **Machine Learning:** Classification, risk modeling, gradient boosting, model evaluation, explainability, production ML
-- **AI Engineering:** LLM applications, structured extraction, evidence validation, evaluation frameworks, document processing, RAG
+- **AI Engineering:** LLM applications, structured extraction, prompt engineering, human-in-the-loop evaluation, model benchmarking, evidence validation, RAG
 - **Software & Infrastructure:** Python, SQL, AWS, event-driven architectures, data pipelines, Docker, REST APIs, infrastructure as code, CI/CD
 
 ## Connect
