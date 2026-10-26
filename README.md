@@ -12,7 +12,7 @@ Outside of my professional work, I'm a homelabbing enthusiast. I enjoy experimen
 
 ### Finbot — Financial Data & AI Engineering
 
-A collection of interconnected services for discovering financial disclosures, extracting structured earnings data with LLMs, and evaluating extraction quality. Built to explore event-driven architectures, cloud infrastructure, AI engineering, and rigorous model evaluation.
+A collection of interconnected services for discovering SEC financial disclosures, extracting structured earnings data with LLMs, and evaluating extraction quality. Combines production AWS infrastructure, event-driven processing, and rigorous LLM benchmarking to build a reliable financial information pipeline.
 
 **[Finbot Filings — SEC Filing Discovery & Ingestion](https://github.com/ilancooke/finbot-filings)**
 
@@ -20,13 +20,11 @@ An AWS-based document ingestion service that monitors SEC filings using earnings
 
 *Technologies: Python, AWS ECS/Fargate, S3, DynamoDB, SNS, CloudWatch, Docker, CDK*
 
-**[Finbot Earnings — LLM Earnings Extraction](https://github.com/ilancooke/finbot-earnings)**
+**[Finbot Earnings — Production LLM Earnings Extraction](https://github.com/ilancooke/finbot-earnings)**
 
-An LLM-powered processing pipeline that transforms financial filings into structured earnings data. Processes multi-document filings using Amazon Bedrock, validates extracted values against source evidence, and maintains versioned earnings events with recoverable processing and publication. Designed as an event-driven consumer of Finbot Filings.
+A production-deployed, event-driven LLM pipeline that transforms SEC filings into structured earnings data. Uses the OpenAI API to extract reported and adjusted diluted EPS from multi-document filings, with schema validation, source provenance, and immutable event publication. Built on AWS Lambda, SQS, and DynamoDB with durable processing, retry/recovery mechanisms, and idempotent duplicate handling. End-to-end cloud processing and downstream event delivery have been verified against real SEC filings.
 
-*Technologies: Python, Amazon Bedrock, structured outputs, AWS Lambda, SQS, DynamoDB, SNS*
-
-*In development — AWS processing infrastructure implemented and tested offline.*
+*Technologies: Python, OpenAI API, structured outputs, AWS Lambda, SQS, DynamoDB, SNS, Secrets Manager, CDK*
 
 **[Finbot Filing Evals — LLM Evaluation & Benchmarking](https://github.com/ilancooke/finbot-filing-evals)**
 
